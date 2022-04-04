@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class BulletEmitterBehaviour : MonoBehaviour
 {
-
-    private BulletBehaviour _bullet;
+    [SerializeField]
+    private BulletBehaviour _bulletRef;
+    [SerializeField]
     private float _bulletForce;
+    [SerializeField]
+    private GameObject _owner;
 
     public void Fire()
     {
-        GameObject bullet = Instantiate(_bullet.gameObject, null);
-        Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
+        GameObject bullet = Instantiate(_bulletRef.gameObject, transform.position, transform.rotation);
         BulletBehaviour bulletBehaviour = bullet.GetComponent<BulletBehaviour>();
-
+        bulletBehaviour.OwnerTag = _owner.tag;
+        bulletBehaviour.RigidBody.AddForce(transform.forward * _bulletForce, ForceMode.Impulse);
     }
 }

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4041077812490481687}
   - component: {fileID: 8447245538235083633}
   - component: {fileID: 4041077812490481683}
+  - component: {fileID: 7649564205105954985}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -129,4 +130,19 @@ MonoBehaviour:
   _velocity: {x: 0, y: 0, z: 0}
   _target: {fileID: 0}
   _speed: 5
-  _damage: 0
+  _damage: 1
+--- !u!114 &7649564205105954985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4041077812490481688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0126062dc3c6aa4fb5ce6dddf0e6e8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 1
+  _isAlive: 0
+  _destroyOnDeath: 1
